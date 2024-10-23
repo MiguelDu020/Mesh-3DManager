@@ -27,4 +27,4 @@ public:
     int ObtenerNumeroVertices() const;
 };
 
-#endif // FACE_H
+#endif 

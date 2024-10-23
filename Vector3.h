@@ -14,11 +14,33 @@ public:
 
     Vector3(float x = 0, float y = 0, float z = 0);
 
-    float distanceTo(const Vector3& other) const;
-    // Métodos para fijar las coordenadas
+    float ObtenerX() const { return x; }
+    float ObtenerY() const { return y; }
+    float ObtenerZ() const { return z; }
+
     void FijarX(float nx) { x = nx; }
     void FijarY(float ny) { y = ny; }
     void FijarZ(float nz) { z = nz; }
+
+    float DistanciaA(const Vector3& v) const;
+
+    bool Comparar(const Vector3& v, int dimension) const {
+        if (dimension == 0) return x < v.x;
+        if (dimension == 1) return y < v.y;
+        return z < v.z;
+    }
+bool EnCaja(const Vector3& pmin, const Vector3& pmax) const {
+    return x >= pmin.x && x <= pmax.x &&
+           y >= pmin.y && y <= pmax.y &&
+           z >= pmin.z && z <= pmax.z;
+}
+
+float ObtenerCoordenada(int dimension) const {
+    if (dimension == 0) return x;
+    if (dimension == 1) return y;
+    return z;
+}
+
 };
 
-#endif // VECTOR3_H
+#endif 

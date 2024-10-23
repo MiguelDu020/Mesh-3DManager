@@ -24,7 +24,12 @@ public:
     bool EliminarMesh(const std::string& nombre);
     bool GuardarMesh(const std::string& nombre, const std::string& nombreArchivo);
 
-    
+    const std::vector<Mesh>& ObtenerTodasLasMallas() const;
+    Vector3 BuscarVerticeMasCercanoEnMalla(const std::string& nombre_malla, const Vector3& punto);
+    bool ObtenerCajaEnvolvente(const std::string& nombre_malla, Vector3& pmin, Vector3& pmax) const;
+    const std::vector<Vector3>& ObtenerVerticesDeMalla(const std::string& nombre_objeto) const;
+
+    std::vector<Vector3> BuscarVerticesEnCaja(const std::string& nombre_malla, const Vector3& punto1, const Vector3& punto2);
 };
 
-#endif // MESH_MANAGER_H
+#endif 

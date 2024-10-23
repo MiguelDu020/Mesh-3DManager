@@ -6,7 +6,8 @@
   Materia: Estructuras de datos
 ****************************************************************/
 #include "Face.h"
-#include <algorithm>  // Para std::find
+#include <algorithm>  // Para std::findF
+#include <vector>
 
 
 Face::Face(const std::vector<int>& vertices) : vertices(vertices) {}
